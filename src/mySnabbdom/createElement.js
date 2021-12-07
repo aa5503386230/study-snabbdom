@@ -5,7 +5,7 @@ export default function createElement(vnode) {
     domNode.innerText = vnode.text
   }else if(Array.isArray(vnode.children) && vnode.children.length > 0) {
     //内部子节点，递归调用，遇到文本不递归
-    for (let i =0;i < vnode.children.length; i++) {
+    for (let i = 0; i < vnode.children.length; i++) {
       let ch = vnode.children[i]
       let chDom = createElement(ch)
       domNode.appendChild(chDom)

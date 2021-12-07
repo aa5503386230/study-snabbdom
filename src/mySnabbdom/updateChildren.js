@@ -1,6 +1,9 @@
 import createElement from "./createElement";
 import patch from "./patch";
 export default function updateChildren(parentElm, oldCh, newCh) {
+  console.log("parentElm",parentElm)
+  console.log("oldCh",oldCh)
+  console.log("newCh",newCh)
   // 四个指针
   // 旧前
   let oldStartIdx = 0;
@@ -102,16 +105,15 @@ export default function updateChildren(parentElm, oldCh, newCh) {
   // 循环结束
   if (newStartIdx <= newEndIdx) {
     // 说明newVndoe还有剩余节点没有处理，所以要添加这些节点
-    // // 插入的标杆
-    // const before =
-    //   newCh[newEndIdx + 1] === null ? null : newCh[newEndIdx + 1].elm;
     for (let i = newStartIdx; i <= newEndIdx; i++) {
+      console.log('添加节点')
       // insertBefore方法可以自动识别null，如果是null就会自动排到队尾，和appendChild一致
       parentElm.insertBefore(createElement(newCh[i]), null);
     }
   } else if (oldStartIdx <= oldEndIdx) {
     // 说明oldVnode还有剩余节点没有处理，所以要删除这些节点
     for (let i = oldStartIdx; i <= oldEndIdx; i++) {
+      console.log('删除节点')
       if (oldCh[i]) {
         parentElm.removeChild(oldCh[i].elm);
       }

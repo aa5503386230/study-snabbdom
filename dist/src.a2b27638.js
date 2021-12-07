@@ -416,16 +416,20 @@ var _patch = _interopRequireDefault(require("./mySnabbdom/patch"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var vnode = (0, _h.default)('h1', {}, [(0, _h.default)('div', {
+var vnode = (0, _h.default)('h1', {}, [(0, _h.default)('ul', {
   key: 1
-}, '1'), (0, _h.default)('div', {
+}, [(0, _h.default)('li', {
+  key: 'C'
+}, 'C'), (0, _h.default)('li', {
+  key: 'D'
+}, 'D')]), (0, _h.default)('div', {
   key: 2
 }, '2'), (0, _h.default)('div', {
   key: 3
 }, '3')]);
 var oldVnode = document.querySelector('#app');
 (0, _patch.default)(oldVnode, vnode);
-var vnode2 = (0, _h.default)('h1', {}, [(0, _h.default)('div', {
+var vnode1 = (0, _h.default)('h1', {}, [(0, _h.default)('div', {
   key: 3
 }, '3'), (0, _h.default)('div', {
   key: 'B'
@@ -435,8 +439,18 @@ var vnode2 = (0, _h.default)('h1', {}, [(0, _h.default)('div', {
   key: 4
 }, '4')]);
 setTimeout(function () {
-  (0, _patch.default)(vnode, vnode2);
+  (0, _patch.default)(vnode, vnode1);
 }, 2000);
+console.log(vnode1); // const vnode2 = h('h1',{},[
+//   h('div',{key: 3},'3'),
+//   h('div',{key: 'B'},'B'),
+//   h('div',{key: 'C'},'C'),
+//   h('div',{key: 'A'},'A'),
+//   h('div',{key: 4},'4')
+// ])
+// setTimeout(()=>{
+//   patch(vnode1,vnode2)
+// },3000)
 },{"./mySnabbdom/h":"src/mySnabbdom/h.js","./mySnabbdom/patch":"src/mySnabbdom/patch.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -465,7 +479,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60826" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49597" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

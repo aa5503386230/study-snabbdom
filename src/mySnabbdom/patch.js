@@ -35,7 +35,7 @@ export default function(oldVnode, newVnode) {
       }
     }
   }else {
-    let newVnodeElm = createElement(newVnode)
+    let newVnodeElm = createElement(newVnode) //第二次更新的时候是这个让vnode有了elm属性
     //插入到老节点之前
     if(oldVnode.elm.parentNode !== undefined && newVnodeElm){
       oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm)
