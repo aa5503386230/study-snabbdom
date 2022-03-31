@@ -6,3 +6,5 @@ vnode函数：用于递归生成虚拟DOM对象
 createElement函数：根据虚拟DOM对象递归创造真实的DOM对象
 patch函数：根据新旧两个虚拟DOM在旧的虚拟DOM对应的真实DOM上进行最小化更新
 updateChildren函数：属于patch函数中处理新旧DOM都有children属性的情况
+
+111
