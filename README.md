@@ -8,3 +8,5 @@ patch函数：根据新旧两个虚拟DOM在旧的虚拟DOM对应的真实DOM上
 updateChildren函数：属于patch函数中处理新旧DOM都有children属性的情况
 
 111
+
+testest
